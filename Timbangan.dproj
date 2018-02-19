@@ -102,6 +102,11 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Icon_MainIcon>purnama.ico</Icon_MainIcon>
+        <VerInfo_Keys>CompanyName=PT. Purnama Kertasindo;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=artolanggeng;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <AppEnableHighDPI>true</AppEnableHighDPI>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
     </PropertyGroup>
@@ -181,9 +186,15 @@ $(PostBuildEvent)]]></PostBuildEvent>
                 <Source>
                     <Source Name="MainSource">Timbangan.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k230.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp230.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="2">
-                <DeployFile LocalName="js\base64-min.js" Configuration="Debug" Class="ProjectFile">
+                <DeployFile LocalName="js\CallbackFramework.js" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
@@ -273,6 +284,12 @@ $(PostBuildEvent)]]></PostBuildEvent>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="js\base64-min.js" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="js\base64.js" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
@@ -285,18 +302,27 @@ $(PostBuildEvent)]]></PostBuildEvent>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="js\CallbackFramework.js" Configuration="Debug" Class="ProjectFile">
+                <DeployClass Name="DependencyModule">
                     <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
                     </Platform>
-                </DeployFile>
-                <DeployClass Name="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
@@ -650,27 +676,12 @@ $(PostBuildEvent)]]></PostBuildEvent>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="DependencyModule">
-                    <Platform Name="Win32">
-                        <Operation>0</Operation>
-                        <Extensions>.dll;.bpl</Extensions>
-                    </Platform>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="OSX32">
-                        <RemoteDir>Contents\MacOS</RemoteDir>
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="iOSSimulator">
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
@@ -696,7 +707,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>if exist &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; ( call &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; &quot;$(PROJECTDIR)&quot; &quot;$(OUTPUTDIR)&quot; )</PostBuildEvent>
+        <PostBuildEvent>if exist &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; ( call &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; &quot;$(PROJECTDIR)&quot; &quot;$(OUTPUTDIR)&quot; )</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win64'">
@@ -704,7 +715,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>if exist &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; ( call &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; &quot;$(PROJECTDIR)&quot; &quot;$(OUTPUTDIR)&quot; )</PostBuildEvent>
+        <PostBuildEvent>if exist &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; ( call &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; &quot;$(PROJECTDIR)&quot; &quot;$(OUTPUTDIR)&quot; )</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
@@ -712,7 +723,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>if exist &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; ( call &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; &quot;$(PROJECTDIR)&quot; &quot;$(OUTPUTDIR)&quot; )</PostBuildEvent>
+        <PostBuildEvent>if exist &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; ( call &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; &quot;$(PROJECTDIR)&quot; &quot;$(OUTPUTDIR)&quot; )</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win64'">
@@ -720,7 +731,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>if exist &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; ( call &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; &quot;$(PROJECTDIR)&quot; &quot;$(OUTPUTDIR)&quot; )</PostBuildEvent>
+        <PostBuildEvent>if exist &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; ( call &quot;$(BDS)\ObjRepos\en\dsrest\dsPostBuild.bat&quot; &quot;$(PROJECTDIR)&quot; &quot;$(OUTPUTDIR)&quot; )</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
 </Project>

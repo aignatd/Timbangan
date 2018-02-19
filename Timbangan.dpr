@@ -18,6 +18,7 @@ begin
   if WebRequestHandler <> nil then
     WebRequestHandler.WebModuleClass := WebModuleClass;
   Application.Initialize;
+  Application.Title := 'TImbangan';
   Application.CreateForm(TUtama, Utama);
   Application.Run;
 end.
