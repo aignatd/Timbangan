@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2018-02-15 13:01:57.000.888,=d:\Data\Program\Delphi\Timbangan\Timbangan\FormUnit1.pas</Transaction>
     <Transaction>2018-02-15 13:01:57.000.936,=d:\Data\Program\Delphi\Timbangan\Timbangan\ServerMethodsUnit1.pas</Transaction>
     <Transaction>2018-02-15 13:01:57.000.982,=d:\Data\Program\Delphi\Timbangan\Timbangan\ServerContainerUnit1.pas</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.278,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\base64-min.js</Transaction>
+    <Transaction>2018-02-15 13:01:57.000.888,=d:\Data\Program\Delphi\Timbangan\Timbangan\FormUnit1.pas</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.243,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\ServerFunctionExecutor.js</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.289,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\json2-min.js</Transaction>
     <Transaction>2018-02-15 13:01:58.000.258,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\CallbackFramework.js</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.268,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\ServerFunctions.js</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.435,=d:\Data\Program\Delphi\Timbangan\Timbangan\templates\ServerFunctionInvoker.html</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.460,=d:\Data\Program\Delphi\Timbangan\Timbangan\images\collapse.png</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.278,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\base64-min.js</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.332,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\connection.js</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.485,=d:\Data\Program\Delphi\Timbangan\Timbangan\images\expand.png</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.352,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\ServerFunctionInvoker.js</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.412,=d:\Data\Program\Delphi\Timbangan\Timbangan\templates\ReverseString.html</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.237,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\base64.js</Transaction>
     <Transaction>2018-02-15 13:01:58.000.038,=d:\Data\Program\Delphi\Timbangan\Timbangan\WebModuleUnit1.pas</Transaction>
     <Transaction>2018-02-15 13:01:58.000.391,=d:\Data\Program\Delphi\Timbangan\Timbangan\css\ServerFunctionInvoker.css</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.250,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\json2.js</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.289,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\json2-min.js</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.412,=d:\Data\Program\Delphi\Timbangan\Timbangan\templates\ReverseString.html</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.460,=d:\Data\Program\Delphi\Timbangan\Timbangan\images\collapse.png</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.237,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\base64.js</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.268,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\ServerFunctions.js</Transaction>
     <Transaction>2018-02-15 13:01:58.000.317,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\CallbackFramework-min.js</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.371,=d:\Data\Program\Delphi\Timbangan\Timbangan\css\main.css</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.250,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\json2.js</Transaction>
     <Transaction>2018-02-15 13:01:58.000.302,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\ServerFunctionExecutor-min.js</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.243,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\ServerFunctionExecutor.js</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.352,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\ServerFunctionInvoker.js</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.332,=d:\Data\Program\Delphi\Timbangan\Timbangan\js\connection.js</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.435,=d:\Data\Program\Delphi\Timbangan\Timbangan\templates\ServerFunctionInvoker.html</Transaction>
-    <Transaction>2018-02-15 13:01:58.000.485,=d:\Data\Program\Delphi\Timbangan\Timbangan\images\expand.png</Transaction>
-    <Transaction>2018-02-15 13:21:38.000.510,D:\Data\Program\Delphi\Timbangan\Timbangan\frmUtama.dfm=d:\Data\Program\Delphi\Timbangan\Timbangan\FormUnit1.dfm</Transaction>
-    <Transaction>2018-02-15 13:21:38.000.510,D:\Data\Program\Delphi\Timbangan\Timbangan\frmUtama.pas=d:\Data\Program\Delphi\Timbangan\Timbangan\FormUnit1.pas</Transaction>
-    <Transaction>2018-02-15 13:21:59.000.379,D:\Data\Program\Delphi\Timbangan\Timbangan\smUtama.pas=d:\Data\Program\Delphi\Timbangan\Timbangan\ServerMethodsUnit1.pas</Transaction>
-    <Transaction>2018-02-15 13:22:08.000.001,D:\Data\Program\Delphi\Timbangan\Timbangan\scUtama.dfm=d:\Data\Program\Delphi\Timbangan\Timbangan\ServerContainerUnit1.dfm</Transaction>
-    <Transaction>2018-02-15 13:22:08.000.001,D:\Data\Program\Delphi\Timbangan\Timbangan\scUtama.pas=d:\Data\Program\Delphi\Timbangan\Timbangan\ServerContainerUnit1.pas</Transaction>
-    <Transaction>2018-02-15 13:22:18.000.100,D:\Data\Program\Delphi\Timbangan\Timbangan\wmUtama.pas=d:\Data\Program\Delphi\Timbangan\Timbangan\WebModuleUnit1.pas</Transaction>
-    <Transaction>2018-02-15 13:22:18.000.100,D:\Data\Program\Delphi\Timbangan\Timbangan\wmUtama.dfm=d:\Data\Program\Delphi\Timbangan\Timbangan\WebModuleUnit1.dfm</Transaction>
+    <Transaction>2018-02-15 13:01:58.000.371,=d:\Data\Program\Delphi\Timbangan\Timbangan\css\main.css</Transaction>
+    <Transaction>2018-02-15 13:21:38.000.510,d:\Data\Program\Delphi\Timbangan\Timbangan\FormUnit1.pas=D:\Data\Program\Delphi\Timbangan\Timbangan\frmUtama.pas</Transaction>
+    <Transaction>2018-02-15 13:21:38.000.510,d:\Data\Program\Delphi\Timbangan\Timbangan\FormUnit1.dfm=D:\Data\Program\Delphi\Timbangan\Timbangan\frmUtama.dfm</Transaction>
+    <Transaction>2018-02-15 13:21:59.000.379,d:\Data\Program\Delphi\Timbangan\Timbangan\ServerMethodsUnit1.pas=D:\Data\Program\Delphi\Timbangan\Timbangan\smUtama.pas</Transaction>
+    <Transaction>2018-02-15 13:22:08.000.001,d:\Data\Program\Delphi\Timbangan\Timbangan\ServerContainerUnit1.pas=D:\Data\Program\Delphi\Timbangan\Timbangan\scUtama.pas</Transaction>
+    <Transaction>2018-02-15 13:22:08.000.001,d:\Data\Program\Delphi\Timbangan\Timbangan\ServerContainerUnit1.dfm=D:\Data\Program\Delphi\Timbangan\Timbangan\scUtama.dfm</Transaction>
+    <Transaction>2018-02-15 13:22:18.000.100,d:\Data\Program\Delphi\Timbangan\Timbangan\WebModuleUnit1.pas=D:\Data\Program\Delphi\Timbangan\Timbangan\wmUtama.pas</Transaction>
+    <Transaction>2018-02-15 13:22:18.000.100,d:\Data\Program\Delphi\Timbangan\Timbangan\WebModuleUnit1.dfm=D:\Data\Program\Delphi\Timbangan\Timbangan\wmUtama.dfm</Transaction>
   </Transactions>
 </BorlandProject>
