@@ -55,6 +55,9 @@ type
     tonBesar1: TLabel;
     tonKecil1: TLabel;
     cpKecil1: TComPort;
+    lcomBesar1: TLabel;
+    lcomKecil1: TLabel;
+    mmRefresh: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure mmStartClick(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -76,11 +79,14 @@ type
     procedure cpKecil1AfterClose(Sender: TObject);
     procedure cpKecil1AfterOpen(Sender: TObject);
     procedure cpKecil1RxChar(Sender: TObject; Count: Integer);
+    procedure mmRefreshClick(Sender: TObject);
   private
     FServer: TIdHTTPWebBrokerBridge;
     procedure mmStopClick(Sender: TObject);
     procedure StartServer;
     procedure ProsesDataTimbangan(Str : String; cbTimbang : TComboBox; cbTonase : TLabel; intState : Integer);
+    procedure DisplayHint(Sender: TObject);
+    Function GetIPAddress():String;
     { Private declarations }
   public
     { Public declarations }
@@ -96,7 +102,7 @@ implementation
 {$R *.dfm}
 
 uses
-  WinApi.Windows, Winapi.ShellApi, Datasnap.DSSession;
+  WinApi.Windows, Winapi.ShellApi, Datasnap.DSSession, Winsock, smUtama;
 
 procedure TUtama.Browser1Click(Sender: TObject);
 var
@@ -163,12 +169,20 @@ end;
 
 procedure TUtama.FormCreate(Sender: TObject);
 begin
+  Application.OnHint := DisplayHint;
   FServer := TIdHTTPWebBrokerBridge.Create(Self);
 end;
 
 procedure TUtama.FormShow(Sender: TObject);
 begin
   cpBesar1.LoadSettings(stRegistry, 'HKEY_LOCAL_MACHINE\Software\Warehouse\Besar1');
+  sbUtama.Panels[3].Text := GetIPAddress;
+  StartServer;
+end;
+
+procedure TUtama.mmRefreshClick(Sender: TObject);
+begin
+  sbUtama.Panels[3].Text := GetIPAddress;
 end;
 
 procedure TUtama.mmSettingClick(Sender: TObject);
@@ -218,11 +232,13 @@ begin
   begin
     cpBesar1.Close;
     tbKonek1.ImageIndex := 3;
+    lcomBesar1.Caption := '';
   end
   else
   Begin
     cpBesar1.Open;
     tbKonek1.ImageIndex := 0;
+    lcomBesar1.Caption := cpBesar1.Port;
   End;
 end;
 
@@ -232,11 +248,13 @@ begin
   begin
     cpKecil1.Close;
     tbKonek2.ImageIndex := 3;
+    lcomKecil1.Caption := '';
   end
   else
   Begin
     cpKecil1.Open;
     tbKonek2.ImageIndex := 0;
+    lcomKecil1.Caption := cpKecil1.Port;
   End;
 end;
 
@@ -311,6 +329,31 @@ begin
         cbTonase.Caption := Str.Trim;
     end;
   end;
+end;
+
+Function TUtama.GetIPAddress():String;
+type
+  pu_long = ^u_long;
+var
+  varTWSAData : TWSAData;
+  varPHostEnt : PHostEnt;
+  varTInAddr : TInAddr;
+  namebuf : array[0..255] of ansichar;
+begin
+  If WSAStartup($101,varTWSAData) <> 0 Then
+  Result := 'No. IP Address'
+  Else Begin
+    gethostname(namebuf,sizeof(namebuf));
+    varPHostEnt := gethostbyname(namebuf);
+    varTInAddr.S_addr := u_long(pu_long(varPHostEnt^.h_addr_list^)^);
+    Result := inet_ntoa(varTInAddr);
+  End;
+  WSACleanup;
+end;
+
+procedure TUtama.DisplayHint(Sender: TObject);
+begin
+  sbUtama.Panels[4].Text := GetLongHint(Application.Hint);
 end;
 
 end.

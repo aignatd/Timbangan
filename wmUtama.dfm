@@ -1,4 +1,4 @@
-object WebModule1: TWebModule1
+object WebMod: TWebMod
   OldCreateOrder = False
   OnCreate = WebModuleCreate
   Actions = <
@@ -17,6 +17,11 @@ object WebModule1: TWebModule1
       Name = 'DefaultAction'
       PathInfo = '/'
       OnAction = WebModuleDefaultAction
+    end
+    item
+      Name = 'Timbangan'
+      PathInfo = '/api/v1/timbangan'
+      OnAction = WebModTimbanganAction
     end>
   BeforeDispatch = WebModuleBeforeDispatch
   Height = 333

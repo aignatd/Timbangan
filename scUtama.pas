@@ -11,7 +11,7 @@ uses System.SysUtils, System.Classes,
   Datasnap.DSAuth;
 
 type
-  TServerContainer1 = class(TDataModule)
+  TSerCont = class(TDataModule)
     DSServer1: TDSServer;
     DSServerClass1: TDSServerClass;
     procedure DSServerClass1GetClass(DSServerClass: TDSServerClass;
@@ -41,19 +41,19 @@ begin
   Result := FDSServer;
 end;
 
-constructor TServerContainer1.Create(AOwner: TComponent);
+constructor TSerCont.Create(AOwner: TComponent);
 begin
   inherited;
   FDSServer := DSServer1;
 end;
 
-destructor TServerContainer1.Destroy;
+destructor TSerCont.Destroy;
 begin
   inherited;
   FDSServer := nil;
 end;
 
-procedure TServerContainer1.DSServerClass1GetClass(
+procedure TSerCont.DSServerClass1GetClass(
   DSServerClass: TDSServerClass; var PersistentClass: TPersistentClass);
 begin
   PersistentClass := smUtama.TServerMethods1;
@@ -61,7 +61,7 @@ end;
 
 
 initialization
-  FModule := TServerContainer1.Create(nil);
+  FModule := TSerCont.Create(nil);
 finalization
   FModule.Free;
 end.

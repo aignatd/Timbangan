@@ -1,4 +1,4 @@
-object ServerContainer1: TServerContainer1
+object SerCont: TSerCont
   OldCreateOrder = False
   Height = 271
   Width = 415

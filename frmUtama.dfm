@@ -1,11 +1,10 @@
 object Utama: TUtama
   Left = 271
   Top = 114
-  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Timbangan'
-  ClientHeight = 321
-  ClientWidth = 484
+  ClientHeight = 399
+  ClientWidth = 676
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,8 +21,8 @@ object Utama: TUtama
   TextHeight = 13
   object sbUtama: TStatusBar
     Left = 0
-    Top = 296
-    Width = 484
+    Top = 374
+    Width = 676
     Height = 25
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBtnText
@@ -33,12 +32,12 @@ object Utama: TUtama
     Panels = <
       item
         Alignment = taCenter
-        Width = 85
+        Width = 95
       end
       item
         Alignment = taCenter
-        Text = '8080'
-        Width = 65
+        Text = '42024'
+        Width = 85
       end
       item
         Alignment = taCenter
@@ -48,19 +47,21 @@ object Utama: TUtama
       item
         Alignment = taCenter
         Text = '127.0.0.1'
-        Width = 105
+        Width = 175
       end
       item
         Width = 50
       end>
     SizeGrip = False
     UseSystemFont = False
+    ExplicitTop = 332
+    ExplicitWidth = 578
   end
   object pcUtama: TPageControl
     Left = 0
     Top = 0
-    Width = 484
-    Height = 296
+    Width = 676
+    Height = 374
     ActivePage = tsBesar1
     Align = alClient
     Font.Charset = ANSI_CHARSET
@@ -70,6 +71,8 @@ object Utama: TUtama
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
+    ExplicitWidth = 578
+    ExplicitHeight = 332
     object tsBesar1: TTabSheet
       Caption = 'Timbang Besar 1'
       Font.Charset = ANSI_CHARSET
@@ -78,24 +81,24 @@ object Utama: TUtama
       Font.Name = 'Calibri'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = -16
-      ExplicitTop = 45
-      ExplicitHeight = 231
+      ExplicitWidth = 570
+      ExplicitHeight = 301
       DesignSize = (
-        476
-        265)
+        668
+        343)
       object tonBesar1: TLabel
-        Left = 13
-        Top = 84
-        Width = 450
-        Height = 97
+        Left = 61
+        Top = 54
+        Width = 547
+        Height = 235
+        Hint = 'Data jumlah timbangan'
         Alignment = taCenter
         Anchors = []
         AutoSize = False
         Caption = '0'
         Font.Charset = ANSI_CHARSET
         Font.Color = clRed
-        Font.Height = -96
+        Font.Height = -128
         Font.Name = 'Trebuchet MS'
         Font.Style = []
         ParentFont = False
@@ -104,7 +107,7 @@ object Utama: TUtama
       object tbUtama: TToolBar
         Left = 0
         Top = 0
-        Width = 476
+        Width = 668
         Height = 38
         AutoSize = True
         ButtonHeight = 32
@@ -115,9 +118,11 @@ object Utama: TUtama
         Images = imgList
         Indent = 3
         TabOrder = 0
+        ExplicitWidth = 570
         object tbKonek1: TToolButton
           Left = 3
           Top = 0
+          Hint = 'Tombol koneksi timbangan'
           ImageIndex = 3
           OnClick = tbKonek1Click
         end
@@ -132,6 +137,7 @@ object Utama: TUtama
         object tbSetting1: TToolButton
           Left = 41
           Top = 0
+          Hint = 'Tombol setting timbangan'
           ImageIndex = 4
           OnClick = tbSetting1Click
         end
@@ -146,6 +152,7 @@ object Utama: TUtama
         object tbSave1: TToolButton
           Left = 79
           Top = 0
+          Hint = 'Tombol simpan setting timbangan'
           ImageIndex = 5
           OnClick = tbSave1Click
         end
@@ -160,16 +167,18 @@ object Utama: TUtama
         object tbLoad1: TToolButton
           Left = 117
           Top = 0
+          Hint = 'Tombol restore setting timbangan'
           Caption = 'tbLoad1'
           ImageIndex = 6
           OnClick = tbLoad1Click
         end
       end
       object cbTimbang1: TComboBox
-        Left = 390
+        Left = 582
         Top = 7
         Width = 78
         Height = 24
+        Hint = 'Pilihan merk timbangan'
         Style = csDropDownList
         Anchors = [akTop, akRight]
         CharCase = ecUpperCase
@@ -186,28 +195,38 @@ object Utama: TUtama
         Items.Strings = (
           'GST'
           'HERBER')
+        ExplicitLeft = 484
       end
       object gbState1: TGroupBox
         Left = 0
-        Top = 231
-        Width = 476
+        Top = 309
+        Width = 668
         Height = 34
         Align = alBottom
         TabOrder = 2
+        ExplicitTop = 267
+        ExplicitWidth = 570
+        DesignSize = (
+          668
+          34)
         object ComLed1: TComLed
-          Left = 412
+          Left = 597
           Top = 1
           Width = 32
           Height = 32
+          Hint = 'Indikator koneksi timbangan'
           ComPort = cpBesar1
           LedSignal = lsConn
           Kind = lkRedLight
+          Anchors = [akTop, akRight]
+          ExplicitLeft = 499
         end
         object Label1: TLabel
-          Left = 439
+          Left = 624
           Top = 8
           Width = 29
           Height = 16
+          Anchors = [akTop, akRight]
           Caption = 'Conn'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -215,21 +234,26 @@ object Utama: TUtama
           Font.Name = 'Tahoma'
           Font.Style = []
           ParentFont = False
+          ExplicitLeft = 526
         end
         object ComLed2: TComLed
-          Left = 365
+          Left = 550
           Top = 1
           Width = 32
           Height = 32
+          Hint = 'Indikator transaksi timbangan'
           ComPort = cpBesar1
           LedSignal = lsTx
           Kind = lkRedLight
+          Anchors = [akTop, akRight]
+          ExplicitLeft = 452
         end
         object Label2: TLabel
-          Left = 392
+          Left = 577
           Top = 9
           Width = 19
           Height = 16
+          Anchors = [akTop, akRight]
           Caption = 'Trx'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -237,27 +261,47 @@ object Utama: TUtama
           Font.Name = 'Tahoma'
           Font.Style = []
           ParentFont = False
+          Layout = tlCenter
+          ExplicitLeft = 479
+        end
+        object lcomBesar1: TLabel
+          Left = 500
+          Top = 9
+          Width = 4
+          Height = 16
+          Hint = 'Port timbangan'
+          Anchors = [akTop, akRight]
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          Layout = tlCenter
         end
       end
     end
     object tsKecil1: TTabSheet
       Caption = 'Timbang Kecil 1'
       ImageIndex = 1
+      ExplicitWidth = 570
+      ExplicitHeight = 301
       DesignSize = (
-        476
-        265)
+        668
+        343)
       object tonKecil1: TLabel
-        Left = 13
-        Top = 84
-        Width = 450
-        Height = 97
+        Left = 61
+        Top = 54
+        Width = 547
+        Height = 235
+        Hint = 'Data jumlah timbangan'
         Alignment = taCenter
         Anchors = []
         AutoSize = False
         Caption = '0'
         Font.Charset = ANSI_CHARSET
         Font.Color = clRed
-        Font.Height = -96
+        Font.Height = -128
         Font.Name = 'Trebuchet MS'
         Font.Style = []
         ParentFont = False
@@ -266,7 +310,7 @@ object Utama: TUtama
       object ToolBar1: TToolBar
         Left = 0
         Top = 0
-        Width = 476
+        Width = 668
         Height = 38
         AutoSize = True
         ButtonHeight = 32
@@ -277,9 +321,11 @@ object Utama: TUtama
         Images = imgList
         Indent = 3
         TabOrder = 0
+        ExplicitWidth = 570
         object tbKonek2: TToolButton
           Left = 3
           Top = 0
+          Hint = 'Tombol koneksi timbangan'
           ImageIndex = 3
           OnClick = tbKonek2Click
         end
@@ -294,6 +340,7 @@ object Utama: TUtama
         object tbSetting2: TToolButton
           Left = 41
           Top = 0
+          Hint = 'Tombol setting timbangan'
           ImageIndex = 4
           OnClick = tbSetting2Click
         end
@@ -308,6 +355,7 @@ object Utama: TUtama
         object tbSave2: TToolButton
           Left = 79
           Top = 0
+          Hint = 'Tombol simpan setting timbangan'
           ImageIndex = 5
           OnClick = tbSave2Click
         end
@@ -322,16 +370,18 @@ object Utama: TUtama
         object tbLoad2: TToolButton
           Left = 117
           Top = 0
+          Hint = 'Tombol restore setting timbangan'
           Caption = 'tbLoad1'
           ImageIndex = 6
           OnClick = tbLoad2Click
         end
       end
       object cbTimbang2: TComboBox
-        Left = 390
+        Left = 582
         Top = 7
         Width = 78
         Height = 24
+        Hint = 'Pilihan merk timbangan'
         Style = csDropDownList
         Anchors = [akTop, akRight]
         CharCase = ecUpperCase
@@ -348,28 +398,38 @@ object Utama: TUtama
         Items.Strings = (
           'GST'
           'HERBER')
+        ExplicitLeft = 484
       end
       object GroupBox1: TGroupBox
         Left = 0
-        Top = 231
-        Width = 476
+        Top = 309
+        Width = 668
         Height = 34
         Align = alBottom
         TabOrder = 2
+        ExplicitTop = 267
+        ExplicitWidth = 570
+        DesignSize = (
+          668
+          34)
         object ComLed3: TComLed
-          Left = 412
+          Left = 597
           Top = 1
           Width = 32
           Height = 32
+          Hint = 'Indikator koneksi timbangan'
           ComPort = cpKecil1
           LedSignal = lsConn
           Kind = lkRedLight
+          Anchors = [akTop, akRight]
+          ExplicitLeft = 499
         end
         object Label3: TLabel
-          Left = 439
+          Left = 624
           Top = 8
           Width = 29
           Height = 16
+          Anchors = [akTop, akRight]
           Caption = 'Conn'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -377,21 +437,26 @@ object Utama: TUtama
           Font.Name = 'Tahoma'
           Font.Style = []
           ParentFont = False
+          ExplicitLeft = 526
         end
         object ComLed4: TComLed
-          Left = 365
+          Left = 550
           Top = 1
           Width = 32
           Height = 32
+          Hint = 'Indikator transaksi timbangan'
           ComPort = cpKecil1
           LedSignal = lsTx
           Kind = lkRedLight
+          Anchors = [akTop, akRight]
+          ExplicitLeft = 452
         end
         object Label4: TLabel
-          Left = 392
+          Left = 577
           Top = 9
           Width = 19
           Height = 16
+          Anchors = [akTop, akRight]
           Caption = 'Trx'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -399,41 +464,65 @@ object Utama: TUtama
           Font.Name = 'Tahoma'
           Font.Style = []
           ParentFont = False
+          ExplicitLeft = 479
+        end
+        object lcomKecil1: TLabel
+          Left = 500
+          Top = 9
+          Width = 4
+          Height = 16
+          Hint = 'Port timbangan'
+          Anchors = [akTop, akRight]
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          Layout = tlCenter
         end
       end
     end
   end
   object ApplicationEvents1: TApplicationEvents
-    Left = 450
-    Top = 64
+    Left = 638
+    Top = 66
   end
   object mmUtama: TMainMenu
     Images = imgList
-    Left = 452
-    Top = 146
+    Left = 640
+    Top = 148
     object Browser1: TMenuItem
       Caption = '&Browser'
+      Hint = 'Cek web server via browser'
       OnClick = Browser1Click
     end
     object imbangan1: TMenuItem
       Caption = '&Host'
+      Hint = 'Menu host utama'
       object mmStart: TMenuItem
         Caption = 'St&art'
+        Hint = 'Aktifkan web server'
         ImageIndex = 1
         OnClick = mmStartClick
       end
       object mmSetting: TMenuItem
         Caption = '&Port'
+        Hint = 'Setting port web server'
         ImageIndex = 2
         OnClick = mmSettingClick
       end
     end
+    object mmRefresh: TMenuItem
+      Caption = '&Refresh'
+      OnClick = mmRefreshClick
+    end
   end
   object imgList: TImageList
-    Left = 450
-    Top = 120
+    Left = 638
+    Top = 122
     Bitmap = {
-      494C010107002400800010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101070024008C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -706,8 +795,8 @@ object Utama: TUtama
   end
   object tUtama: TTimer
     OnTimer = tUtamaTimer
-    Left = 450
-    Top = 94
+    Left = 638
+    Top = 96
   end
   object cpBesar1: TComPort
     BaudRate = br9600
@@ -727,8 +816,8 @@ object Utama: TUtama
     OnAfterOpen = cpBesar1AfterOpen
     OnAfterClose = cpBesar1AfterClose
     OnRxChar = cpBesar1RxChar
-    Left = 452
-    Top = 174
+    Left = 640
+    Top = 176
   end
   object cpKecil1: TComPort
     BaudRate = br9600
@@ -748,7 +837,7 @@ object Utama: TUtama
     OnAfterOpen = cpKecil1AfterOpen
     OnAfterClose = cpKecil1AfterClose
     OnRxChar = cpKecil1RxChar
-    Left = 452
-    Top = 202
+    Left = 640
+    Top = 204
   end
 end
